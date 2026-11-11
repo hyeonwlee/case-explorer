@@ -10,7 +10,7 @@ function App() {
     async function fetchCases() {
       try {
         const response = await fetch(
-          "http://127.0.0.1:8000/api/cases"
+          "/api/cases"
         );
 
         if (!response.ok) {
