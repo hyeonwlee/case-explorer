@@ -2,7 +2,6 @@
 name = "case-explorer-backend"
 version = "0.1.0"
 description = "Backend API for Case Explorer"
-readme = "README.md"
 authors = [
     { name = "hwlee", email = "hyeonweel@gmail.com" }
 ]
@@ -12,7 +11,7 @@ dependencies = [
 ]
 
 [project.scripts]
-backend = "backend:main"
+backend = "backend.cli:main"
 
 [build-system]
 requires = ["uv_build>=0.13.7,<0.14.0"]
@@ -25,7 +24,10 @@ dev = [
 ]
 
 [tool.uv]
-package = false
+package = true
+
+[tool.uv.build-backend]
+module-name = "backend"
 
 [tool.pytest.ini_options]
 pythonpath = ["."]
